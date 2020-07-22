@@ -6,25 +6,10 @@ $db = mysqli_connect("127.0.0.1:8889","root","root","gamefinder");
 if(!$db) {
     exit("Verbindungsfehler: ".mysqli_connect_error());
 }
-?>
 
-<?php 
-$sql = 'SELECT * FROM game';
+$sql = 'SELECT game.*, publisher.name as publisherName FROM game LEFT JOIN publisher ON game.idpublisher = publisher.id;';
 $result = mysqli_query($db, $sql);
-
-if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-       echo "Name: " . $row["name"]. "<br>";
-       echo "Release: " . $row["release"]. "<br>";
-       echo "Shop: " . $row["shop"]. "<br>";
-    }
- } else {
-    echo "0 results";
- }
-
-$db -> close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,6 +48,29 @@ $db -> close();
       <i class="fas fa-search"></i>
       </a>
     </div>
+    <div class="container">
+
+    <ul class="card">
+<?php 
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+       //echo "Name: " . $row["name"]. "<br>";
+      // echo "Release: " . $row["release"]. "<br>";
+      // echo "Shop: " . $row["shop"]. "<br>";
+       //echo "Platform: " . $row["platform"]. "<br>";
+       ?>
+        <li>Name:<?= $row["name"] ?></li>
+        <li>Release:<?= $row["release"] ?></li>
+        <li>Shop:<?= $row["shop"] ?></li>
+        <li>Platform:<?= $row["platform"] ?></li>
+       <?php
+    }
+ } else {
+    echo "0 results";
+ }
+?>
+    </ul>
+    </div>
     <button class="topBtn" onclick="topFunction()" id="topBtn">
       <i class="fas fa-arrow-up"></i>
     </button>
@@ -70,3 +78,7 @@ $db -> close();
     <script src="script.js"></script>
   </body>
 </html>
+
+<?php 
+    $db -> close();
+?>
