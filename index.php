@@ -1,3 +1,31 @@
+<?php
+error_reporting(E_ALL); 
+ini_set('display_errors', 'on');
+
+$db = mysqli_connect("127.0.0.1:8889","root","root","gamefinder");
+if(!$db) {
+    exit("Verbindungsfehler: ".mysqli_connect_error());
+}
+?>
+
+<?php 
+$sql = 'SELECT * FROM game';
+$result = mysqli_query($db, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+       echo "Name: " . $row["name"]. "<br>";
+       echo "Release: " . $row["release"]. "<br>";
+       echo "Shop: " . $row["shop"]. "<br>";
+    }
+ } else {
+    echo "0 results";
+ }
+
+$db -> close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +37,7 @@
     <link
       rel="shortcut icon"
       type="image/x-icon"
-      href="./assets/icon.ico"
+      href="./assets/img/icon.ico"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
@@ -32,7 +60,7 @@
         value=""
       />
       <a class="such-btn">
-        <i class="fas fa-search"></i>
+      <i class="fas fa-search"></i>
       </a>
     </div>
     <button class="topBtn" onclick="topFunction()" id="topBtn">
@@ -42,10 +70,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-<?php
-$db = mysqli_connect("127.0.0.1:8889","root","","gamefinder");
-if(!$db) {
-    exit("Verbindungsfehler: ".mysqli_connect_error());
-}
-?>
