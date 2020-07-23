@@ -1,3 +1,5 @@
+/*TOPBUTTON*/
+
 topButton = document.getElementById("topBtn");
 
 window.onscroll = function () {
@@ -15,4 +17,55 @@ function scrollfunction() {
 function topFunction() {
   document.body.scrollTop = "0";
   document.documentElement.scrollTop = "0";
+}
+
+/*SUCHE*/
+
+var el = document.getElementById("suchtext");
+console.log(el);
+el.addEventListener("input", logkey);
+
+function logkey(e) {
+  var input = document.getElementById("suchtext").value;
+  console.log(input);
+  mySearchFunction();
+}
+
+function mySearchFunction() {
+  var input, filter, ul, li, item, i, txtValue;
+  input = document.getElementById("suchtext");
+  filter = input.value;
+  container = document.getElementsByClassName("poke-name");
+
+  for (i = 0; i < container.length; i++) {
+    pokeName = container[i];
+    console.log(pokeName.textContent);
+    console.log(pokeName.getAttribute("data-id"));
+    console.log(
+      document.querySelector(
+        "[data-card-id='" + pokeName.getAttribute("data-id") + "']  .poke-name"
+      )
+    );
+
+    var title = document.querySelectorAll(
+      "[data-card-id='" + pokeName.getAttribute("data-id") + "'] .poke-name"
+    );
+    var card = document.querySelectorAll(
+      "[data-card-id='" + pokeName.getAttribute("data-id") + "']"
+    );
+
+    title = title[0];
+    card = card[0];
+    card.style.display = "none";
+    txtValue = title.innerText;
+    console.log("---------------");
+    console.log(txtValue);
+    console.log(filter);
+    console.log(txtValue.indexOf(filter.toLowerCase()));
+    console.log("---------------");
+    if (txtValue.indexOf(filter.toLowerCase()) > -1) {
+      card.style.display = "block";
+      console.log("show");
+    }
+  }
 }

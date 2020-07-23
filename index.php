@@ -26,59 +26,74 @@ $result = mysqli_query($db, $sql);
     />
     <link
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
+
     <script
       src="https://kit.fontawesome.com/bb308353d9.js"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous">
+    </script>
+  
   </head>
   <body>
-      <h1>GameFinder</h1>
-    <div class="suche">
-      <input
-        class="sucht"
-        type="text"
-        name="suche"
-        placeholder="Suche nach Spielen..."
-        id="suchtext"
-        value=""
-      />
-      <a class="such-btn">
-      <i class="fas fa-search"></i>
-      </a>
-    </div>
-    <div class="container">
+  <h1>GameFinder</h1>
+  
+    <header class="header">
+        
+      <div class="suche">
+          <input
+            class="sucht"
+            type="text"
+            name="suche"
+            placeholder="Suche nach Spielen..."
+            id="suchtext"
+            value=""/>
+          <a class="such-btn">
+            <i class="fas fa-search"></i>
+          </a>
+      </div>
 
-    <ul class="card">
+    </header>
+  
+  
+    <div class="container">
+ 
 <?php 
-if (mysqli_num_rows($result) > 0) {
+  if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-       //echo "Name: " . $row["name"]. "<br>";
-      // echo "Release: " . $row["release"]. "<br>";
-      // echo "Shop: " . $row["shop"]. "<br>";
-       //echo "Platform: " . $row["platform"]. "<br>";
        ?>
-        <li>Name:<?= $row["name"] ?></li>
-        <li>Release:<?= $row["release"] ?></li>
-        <li>Shop:<?= $row["shop"] ?></li>
-        <li>Platform:<?= $row["platform"] ?></li>
+        <li class="card">
+        <img class="img" src="<?= $row["imglink"] ?>" alt="Avatar">
+          <ul class="info">
+            <li class="name">Name:<?= $row["name"] ?></li>
+            <li clas="publisher">Publisher:<?= $row["publisherName"] ?></li>
+            <li class="release">Release:<?= $row["release"] ?></li>
+            <li class="shop">Shop:<?= $row["idshop"] ?></li>
+            <li class="platform">Platform:<?= $row["platform"] ?></li>
+          </ul>
+        </li>
        <?php
     }
  } else {
     echo "0 results";
  }
 ?>
-    </ul>
-    </div>
+  </div>
+
     <button class="topBtn" onclick="topFunction()" id="topBtn">
       <i class="fas fa-arrow-up"></i>
     </button>
-    <footer class="footer"></footer>
+    
+    <!--<footer class="footer"></footer>-->
+    
     <script src="script.js"></script>
+  
   </body>
+
 </html>
+
 
 <?php 
     $db -> close();
 ?>
+
+
