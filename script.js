@@ -35,12 +35,12 @@ function mySearchFunction() {
   var input, filter, ul, li, item, i, txtValue;
   input = document.getElementById("suchtext");
   filter = input.value;
-  container = document.getElementsByClassName("poke-name");
+  container = document.getElementsByClassName("info");
 
   for (i = 0; i < container.length; i++) {
-    pokeName = container[i];
-    console.log(pokeName.textContent);
-    console.log(pokeName.getAttribute("data-id"));
+    info = container[i];
+    console.log(info.textContent);
+    console.log(info.getAttribute("Name"));
     console.log(
       document.querySelector(
         "[data-card-id='" + pokeName.getAttribute("data-id") + "']  .poke-name"
@@ -69,3 +69,20 @@ function mySearchFunction() {
     }
   }
 }
+
+function filter() {
+  document.getElementById("filter").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".fbtn")) {
+    var filter = document.getElementsByClassName("filter-content");
+    var i;
+    for (i = 0; i < filter.length; i++) {
+      var openFilter = filter[i];
+      if (openFilter.classList.contains("show")) {
+        openFilter.classList.remove("show");
+      }
+    }
+  }
+};

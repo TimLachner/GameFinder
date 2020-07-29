@@ -2,7 +2,7 @@
 error_reporting(E_ALL); 
 ini_set('display_errors', 'on');
 
-$db = mysqli_connect("127.0.0.1:3306","root","","gamefinder");
+$db = mysqli_connect("127.0.0.1:8889","root","root","gamefinder");
 if(!$db) {
     exit("Verbindungsfehler: ".mysqli_connect_error());
 }
@@ -52,6 +52,20 @@ $result = mysqli_query($db, $sql);
           </a>
       </div>
 
+      
+      <div class="filter">
+
+      <button onclick="filter()" class="fbtn" type="button">
+      <i class="fas fa-align-justify"></i>
+      </button>
+
+      <div id="filter" class="filter-content">
+      <a onclick="name()" href="#">Name</a>
+      <a onclick="release()" href="#">Release</a>
+      <a onclick="platform()" href="#">Platform</a>
+      </div>
+      </div>
+    
     </header>
   
   
@@ -62,13 +76,13 @@ $result = mysqli_query($db, $sql);
     while($row = mysqli_fetch_assoc($result)) {
        ?>
         <li class="card">
-        <img class="img" src="<?= $row["imglink"] ?>" alt="Avatar">
-          <ul class="info">
-            <li class="name">Name:<?= $row["name"] ?></li>
-            <li class="publisher">Publisher:<?= $row["publisherName"] ?></li>
-            <li class="release">Release:<?= $row["release"] ?></li>
-            <li class="shop">Shop:<?= $row["shopsName"] ?></li>
-            <li class="platform">Platform:<?= $row["platform"] ?></li>
+        <img class="img" src="<?= $row["imglink"] ?>">
+          <ul>
+            <li class="info">Name: <?= $row["name"] ?></li>
+            <li class="info">Publisher: <?= $row["publisherName"] ?></li>
+            <li class="info">Release: <?= $row["release"] ?></li>
+            <li class="info">Shop: <?= $row["shopsName"] ?></li>
+            <li class="info">Platform: <?= $row["platform"] ?></li>
           </ul>
         </li>
        <?php
