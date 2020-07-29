@@ -50,7 +50,7 @@ $result = mysqli_query($db, $sql);
           <a class="such-btn">
             <i class="fas fa-search"></i>
           </a>
-            
+
       </div>
 
       
@@ -76,7 +76,7 @@ $result = mysqli_query($db, $sql);
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
     ?>
-      <li class="card">
+      <li id="card" class="card">
         <img class="img" src="<?= $row["imglink"] ?>" alt="Bild">
           <ul>
             <li class="info">Name: <?= $row["name"] ?></li>

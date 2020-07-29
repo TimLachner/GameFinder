@@ -86,3 +86,12 @@ window.onclick = function (event) {
     }
   }
 };
+
+var card = document.getElementById("card");
+card.addEventListener("click", weiterleitng());
+
+function weiterleitng() {
+  console.log("----------");
+  console.log("Click");
+  console.log("----------");
+}
