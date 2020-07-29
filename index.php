@@ -2,12 +2,12 @@
 error_reporting(E_ALL); 
 ini_set('display_errors', 'on');
 
-$db = mysqli_connect("127.0.0.1:8889","root","root","gamefinder");
+$db = mysqli_connect("127.0.0.1:3306","root","","gamefinder");
 if(!$db) {
     exit("Verbindungsfehler: ".mysqli_connect_error());
 }
 
-$sql = 'SELECT game.*, publisher.name as publisherName FROM game LEFT JOIN publisher ON game.idpublisher = publisher.id;';
+$sql = 'SELECT game.*, publisher.name as publisherName, shops.name as shopsName FROM game LEFT JOIN publisher ON game.idpublisher = publisher.id LEFT JOIN shops ON game.idshop = shops.id;';
 $result = mysqli_query($db, $sql);
 ?>
 
@@ -65,9 +65,9 @@ $result = mysqli_query($db, $sql);
         <img class="img" src="<?= $row["imglink"] ?>" alt="Avatar">
           <ul class="info">
             <li class="name">Name:<?= $row["name"] ?></li>
-            <li clas="publisher">Publisher:<?= $row["publisherName"] ?></li>
+            <li class="publisher">Publisher:<?= $row["publisherName"] ?></li>
             <li class="release">Release:<?= $row["release"] ?></li>
-            <li class="shop">Shop:<?= $row["idshop"] ?></li>
+            <li class="shop">Shop:<?= $row["shopsName"] ?></li>
             <li class="platform">Platform:<?= $row["platform"] ?></li>
           </ul>
         </li>
