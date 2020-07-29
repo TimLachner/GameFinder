@@ -50,6 +50,7 @@ $result = mysqli_query($db, $sql);
           <a class="such-btn">
             <i class="fas fa-search"></i>
           </a>
+            
       </div>
 
       
@@ -74,18 +75,19 @@ $result = mysqli_query($db, $sql);
 <?php 
   if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-       ?>
-        <li class="card">
-        <img class="img" src="<?= $row["imglink"] ?>">
+    ?>
+      <li class="card">
+        <img class="img" src="<?= $row["imglink"] ?>" alt="Bild">
           <ul>
             <li class="info">Name: <?= $row["name"] ?></li>
-            <li class="info">Publisher: <?= $row["publisherName"] ?></li>
-            <li class="info">Release: <?= $row["release"] ?></li>
-            <li class="info">Shop: <?= $row["shopsName"] ?></li>
+              <li class="info">Publisher: <?= $row["publisherName"] ?></li>
+                <li class="info">Release: <?= $row["release"] ?></li>
+              <li class="info">Shop: <?= $row["shopsName"] ?></li>
             <li class="info">Platform: <?= $row["platform"] ?></li>
           </ul>
-        </li>
-       <?php
+      </li>
+       
+    <?php
     }
  } else {
     echo "0 results";
@@ -97,8 +99,7 @@ $result = mysqli_query($db, $sql);
       <i class="fas fa-arrow-up"></i>
     </button>
     
-    <!--<footer class="footer"></footer>-->
-    
+    <footer class="footer"></footer>
     <script src="script.js"></script>
   
   </body>
