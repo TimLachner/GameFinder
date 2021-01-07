@@ -1,4 +1,6 @@
 <?php
-include checklogin.php;
+require "./config.php";
+
+echo 'loggedIn';
 
 ?>
