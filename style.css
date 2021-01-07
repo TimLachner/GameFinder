@@ -235,3 +235,7 @@ h1 {
 .btn-outline-primary {
   margin: auto;
 }
+
+.navbar {
+  margin: 0 0 20px 0;
+}
