@@ -79,11 +79,11 @@ $result = mysqli_query($db, $sql);
       <li id="card" class="card">
         <img class="img" src="<?= $row["imglink"] ?>" alt="Bild">
           <ul>
-            <li class="info">Name: <?= $row["name"] ?></li>
-              <li class="info">Publisher: <?= $row["publisherName"] ?></li>
-                <li class="info">Release: <?= $row["release"] ?></li>
-              <li class="info">Shop: <?= $row["shopsName"] ?></li>
-            <li class="info">Platform: <?= $row["platform"] ?></li>
+            <li class="name">Name: <?= $row["name"] ?></li>
+              <li class="pulisher">Publisher: <?= $row["publisherName"] ?></li>
+                <li class="release">Release: <?= $row["release"] ?></li>
+              <li class="shop">Shop: <?= $row["shopsName"] ?></li>
+            <li class="plattform">Plattform: <?= $row["platform"] ?></li>
           </ul>
       </li>
        
@@ -99,7 +99,11 @@ $result = mysqli_query($db, $sql);
       <i class="fas fa-arrow-up"></i>
     </button>
     
-    <footer class="footer"></footer>
+    <footer class="footer">
+    
+    <INPUT TYPE="button" value="ADMIN-Login" onClick="parent.location='http://localhost:8888/GameFinder/adminlogin.php'"></FORM>
+    
+    </footer>
     <script src="script.js"></script>
   
   </body>

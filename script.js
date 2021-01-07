@@ -41,11 +41,7 @@ function mySearchFunction() {
     info = container[i];
     console.log(info.textContent);
     console.log(info.getAttribute("Name"));
-    console.log(
-      document.querySelector(
-        "[data-card-id='" + pokeName.getAttribute("data-id") + "']  .poke-name"
-      )
-    );
+    console.log(document.querySelector(getElementsByClassName("name")));
 
     var title = document.querySelectorAll(
       "[data-card-id='" + pokeName.getAttribute("data-id") + "'] .poke-name"

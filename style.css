@@ -133,7 +133,8 @@ h1 {
   height: 300px;
 }
 
-.info {
+/*INFO*/
+.name {
   display: block;
   position: relative;
   list-style: none;
@@ -141,6 +142,43 @@ h1 {
   color: black;
   text-align: center;
 }
+
+.publisher {
+  display: block;
+  position: relative;
+  list-style: none;
+  text-align: left;
+  color: black;
+  text-align: center;
+}
+
+.release {
+  display: block;
+  position: relative;
+  list-style: none;
+  text-align: left;
+  color: black;
+  text-align: center;
+}
+
+.shop {
+  display: block;
+  position: relative;
+  list-style: none;
+  text-align: left;
+  color: black;
+  text-align: center;
+}
+
+.plattform {
+  display: block;
+  position: relative;
+  list-style: none;
+  text-align: left;
+  color: black;
+  text-align: center;
+}
+/*----------------*/
 
 .fbtn {
   position: relative;
@@ -182,4 +220,10 @@ h1 {
 
 .show {
   display: block;
+}
+
+/*LOGIN-PAGE*/
+
+.loginbutton {
+  color: purple;
 }
