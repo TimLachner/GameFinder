@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.26)
 # Database: gamefinder
-# Generation Time: 2020-07-29 08:58:08 +0000
+# Generation Time: 2021-01-07 14:40:32 +0000
 # ************************************************************
 
 
@@ -59,7 +59,16 @@ VALUES
 	(15,'Outlast 2','2017-04-24','','1','Pc, Xbox One, Ps4, Nintendo Switch',12,'https://store-images.s-microsoft.com/image/apps.53880.64478484299016632.acc161ee-ac6b-492b-bd5e-6aca1d3ce791.1ffcf012-8978-4b7b-b54f-81bcbfd1e130'),
 	(16,'The Beast Inside','2019-10-17','','1','Pc',13,'https://static-cdn.jtvnw.net/ttv-boxart/The%20Beast%20Inside.jpg'),
 	(17,'No Man\'s Sky','2016-08-09','','1','Pc, Xbox One, Ps4',14,'https://static-cdn.jtvnw.net/ttv-boxart/No%20Man%27s%20Sky.jpg'),
-	(18,'Tom Clancy\'s Ghost Recon Wildlands','2017-03-07','','1, 4','Pc',9,'https://store-images.s-microsoft.com/image/apps.13792.71719118886062043.670855eb-a33f-4d36-8981-56ebd9a05985.1af48f1f-e3ab-47e6-9511-4e7e1c490962');
+	(18,'Tom Clancy\'s Ghost Recon Wildlands','2017-03-07','','1, 4','Pc',9,'https://store-images.s-microsoft.com/image/apps.13792.71719118886062043.670855eb-a33f-4d36-8981-56ebd9a05985.1af48f1f-e3ab-47e6-9511-4e7e1c490962'),
+	(19,'Tom Clancy\'s Rainbow Six:Siege','2015-04-07','','1, 4','Pc, Xbox One, Ps4',9,'https://s2.gaming-cdn.com/images/products/406/orig/tom-clancys-rainbow-six-siege-cover.jpg'),
+	(20,'Satisfactory','2019-03-19','','1, 2','Pc',15,'https://static-cdn.jtvnw.net/ttv-boxart/Satisfactory.jpg'),
+	(21,'Monopoly Streets','2010-10-26','','6','Ps3, Xbox 360, Wii',4,'https://images-na.ssl-images-amazon.com/images/I/51qrCTBCeDL._AC_.jpg'),
+	(22,'Planet Coaster','2016-11-17','','1','Pc, Xbox One, Ps4',16,'https://static-cdn.jtvnw.net/ttv-boxart/Planet%20Coaster.jpg'),
+	(23,'Bigfoot','2017-01-31','','1','Pc',17,'https://steamcdn-a.akamaihd.net/steam/apps/509980/capsule_616x353.jpg?t=1565528391'),
+	(24,'Scum','2018-08-29','','1','Pc',18,'https://static-cdn.jtvnw.net/ttv-boxart/SCUM.jpg'),
+	(25,'Watch Dogs 2','2016-11-15','','1, 4','Pc, Xbox One, Ps4',9,'https://production-gameflipusercontent.fingershock.com/us-east-1:eed9f02c-b79f-404d-b504-7ccb37a812b7/33961cbd-09a2-48a5-a460-d0f1f6ce08a3/f35142b5-753e-43d9-bfaf-f310e42bdca1'),
+	(26,'Minecraft','2011-11-18','','6, 8','Pc, Xbox 360, Xbox One, Ps3, Ps4, Nintendo Switch',19,'https://s2.gaming-cdn.com/images/products/442/orig/minecraft-cover.jpg'),
+	(27,'Hyper Scape','2020-07-12','','4','Pc, Xbox One, Ps4',9,'https://static1.squarespace.com/static/5516beafe4b0c6d76a97bb4d/5516c1dce4b0f81fe4187694/5f00c66e47a3f5734828e52d/1593888707931/HyperScape.png?format=1500w');
 
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -94,7 +103,12 @@ VALUES
 	(11,'Cyanide'),
 	(12,'Red Barrels'),
 	(13,'Movie Games'),
-	(14,'Hello Games');
+	(14,'Hello Games'),
+	(15,'Coffee Stain Studios'),
+	(16,'Frontier Developments plc'),
+	(17,'Cyber Light Game Studio'),
+	(18,'Gamepires'),
+	(19,'Mojang Studios');
 
 /*!40000 ALTER TABLE `publisher` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -122,9 +136,34 @@ VALUES
 	(4,'Uplay'),
 	(5,'Origin'),
 	(6,'Laden'),
-	(7,'Microsoft Store');
+	(7,'Microsoft Store'),
+	(8,'Eigene Website');
 
 /*!40000 ALTER TABLE `shops` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table users
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` char(25) DEFAULT NULL,
+  `password` char(25) DEFAULT NULL,
+  `letzter_login` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
+INSERT INTO `users` (`id`, `username`, `password`, `letzter_login`)
+VALUES
+	(1,'admin','admin',NULL);
+
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

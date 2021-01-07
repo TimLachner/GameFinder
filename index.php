@@ -64,6 +64,8 @@ $result = mysqli_query($db, $sql);
       <a onclick="name()" href="#">Name</a>
       <a onclick="release()" href="#">Release</a>
       <a onclick="platform()" href="#">Platform</a>
+      <a  href="./adminlogin.php">Admin-Login</a>
+
       </div>
       </div>
     
@@ -78,13 +80,15 @@ $result = mysqli_query($db, $sql);
     ?>
       <li id="card" class="card">
         <img class="img" src="<?= $row["imglink"] ?>" alt="Bild">
-          <ul>
-            <li class="name">Name: <?= $row["name"] ?></li>
-              <li class="pulisher">Publisher: <?= $row["publisherName"] ?></li>
-                <li class="release">Release: <?= $row["release"] ?></li>
-              <li class="shop">Shop: <?= $row["shopsName"] ?></li>
-            <li class="plattform">Plattform: <?= $row["platform"] ?></li>
+        <ul class="list-group">
+              <li class="list-group-item">Name: <?= $row["name"] ?></li>
+              <li class="list-group-item">Publisher: <?= $row["publisherName"] ?></li>
+              <li class="list-group-item">Release: <?= $row["release"] ?></li>
+              <li class="list-group-item">Shop: <?= $row["shopsName"] ?></li>
+              <li class="list-group-item">Plattform: <?= $row["platform"] ?></li>
           </ul>
+
+          
       </li>
        
     <?php
