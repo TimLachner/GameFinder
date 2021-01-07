@@ -1,8 +1,6 @@
 <?php
 require "./config.php";
 
-echo 'loggedIn';
-
 ?>
 
 <!DOCTYPE html>
@@ -63,10 +61,43 @@ echo 'loggedIn';
                                         <form class="d-flex">
                                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                                             <button class="btn btn-outline-success" type="submit">Search</button>
-                                        </form>
-                            </div>
+                                        
+                                        
+                                        
+                                        
+                </form>
+                
+            
+            
+            
+            
+            </div>
                         </div>
                     </nav>
+
+                    
+                    
+                    <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Name:" name="name" aria-label="name">
+                        </div>
+            
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Publisher:" name="publisher" aria-label="publisher">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Release:" name="release" aria-label="release">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Shop:" name="shop" aria-label="shop">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Plattform:" name="plattform" aria-label="plattform">
+                        </div>
+
+                       
 
                     </div>
                 </form>
