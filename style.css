@@ -231,3 +231,7 @@ h1 {
 .textbox {
   background: red;
 }
+
+.btn-outline-primary {
+  margin: auto;
+}

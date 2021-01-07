@@ -97,6 +97,11 @@ require "./config.php";
                             <input type="text" class="form-control" placeholder="Plattform:" name="plattform" aria-label="plattform">
                         </div>
 
+
+                        <div>
+                        <button type="" value="Speichern" class="btn btn-outline-primary">Speichern</button>
+                        </div>
+
                        
 
                     </div>
