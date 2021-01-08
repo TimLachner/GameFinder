@@ -62,7 +62,6 @@ require "./core/db.php";
 
                         <div class="tabelletext">ID-Übersicht Shops:</div>
 
-
                             <ul class="list-group">
                                 <li class="list-group-item">1: Steam</li>
                                 <li class="list-group-item">2. EpicGames</li>
@@ -73,34 +72,7 @@ require "./core/db.php";
                                 <li class="list-group-item">7. Eigener Shop</li>
                             </ul>
                         </div>
-                        
-
-                        <div class="tabelletext">ID-Übersicht Publisher:</div>
-
-                            <ul class="list-group">
-                                <li class="list-group-item">1: Rockstar Games</li>
-                                <li class="list-group-item">2. FromSoftware</li>
-                                <li class="list-group-item">3. Nintendo</li>
-                                <li class="list-group-item">4. Electronic Arts</li>
-                                <li class="list-group-item">5. Raven Software</li>
-                                <li class="list-group-item">6. Behaviour Interactive</li>
-                                <li class="list-group-item">7. Playground Games</li>
-                                <li class="list-group-item">8. Bohemia Interactive</li>
-                                <li class="list-group-item">9. Ubisoft</li>
-                                <li class="list-group-item">10. Endnight Games</li>
-                                <li class="list-group-item">11. Cyanide</li>
-                                <li class="list-group-item">12. Red Barrels</li>
-                                <li class="list-group-item">13. Movie Games</li>
-                                <li class="list-group-item">14. Hello Games</li>
-                                <li class="list-group-item">15. Coffee Stain Studios</li>
-                                <li class="list-group-item">16. Frontier Developments</li>
-                                <li class="list-group-item">17. Cyber Light</li>
-                                <li class="list-group-item">18. Gamepires</li>
-                                <li class="list-group-item">19. Mojang</li>
-
-                            </ul>
-                        
-
+                    
                 
                         </div>
             <div class="col-6">
@@ -115,7 +87,22 @@ require "./core/db.php";
                         </div>
             
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Publisher-ID:" name="publisher" aria-label="publisher">
+                            <select class="form-select" name="publisher">
+                            <?php 
+                            
+                            $sql = 'SELECT * FROM publisher';
+                            $result = mysqli_query($db, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                while($publisher = mysqli_fetch_assoc($result)) {
+                                ?>	
+                                    
+                                <option value="<?php echo $publisher['id'] ?>"><?php echo $publisher['name'] ?></option>
+                                <?php
+                                }
+                            }
+                            ?>
+                            </select>
                         </div>
 
                         <div class="input-group mb-3">
@@ -123,11 +110,19 @@ require "./core/db.php";
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Shop-ID:" name="shop" aria-label="shop">
+                            <input type="text" class="form-control" placeholder="Shop-ID:" name="shop" aria-label="shop" list="shops">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Plattform:" name="plattform" aria-label="plattform">
+                            <input type="text" class="form-control" placeholder="Plattform:" name="plattform" aria-label="plattform" list="plattformen">
+                                <datalist id="plattformen">
+                                <option value="PC">
+                                <option value="Play Station 4">
+                                <option value="Play Station 3">
+                                <option value="Xbox 360">
+                                <option value="Xbox One">
+                                <option value="Nintendo Switch">
+                                </datalist>
                         </div>
 
                         <div class="input-group mb-3">
