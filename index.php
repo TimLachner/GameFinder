@@ -3,8 +3,12 @@ require "./core/db.php";
 
 $sql = 'SELECT game.*, publisher.name as publisherName, shops.name as shopsName FROM game LEFT JOIN publisher ON game.idpublisher = publisher.id LEFT JOIN shops ON game.idshop = shops.id;';
 $result = mysqli_query($db, $sql);
+
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,15 +16,14 @@ $result = mysqli_query($db, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>GameFinder</title>
-    <link rel="stylesheet" href="style.css" />
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="./assets/img/icon.ico"
     />
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
@@ -28,10 +31,12 @@ $result = mysqli_query($db, $sql);
       src="https://kit.fontawesome.com/bb308353d9.js"
       crossorigin="anonymous">
     </script>
-
   
   </head>
-<body>
+ 
+<body> 
+
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
@@ -50,71 +55,97 @@ $result = mysqli_query($db, $sql);
               </ul>
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
           </div>
       </div>
 </nav>
 
 
+<div class="wrapper">
 
+	<h2><strong>All Games<span>( 27 )</span></strong></h2>
 
+	<div class="cards">
 
-
-
-
-
-
-
-
-
-
-<div class="container">
- 
 <?php 
   if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
-?>
+?>	
+	
+	<figure class="card">
 
+			<img src="<?= $row["imglink"] ?>" />
 
-      <li id="card" class="card">
-        <img class="img" src="<?= $row["imglink"] ?>" alt="Bild">
-        <ul class="list-group">
-              <li class="list-group-item">Name: <?= $row["gamename"] ?></li>
-              <li class="list-group-item">Publisher: <?= $row["publisherName"] ?></li>
-              <li class="list-group-item">Release: <?= $row["release"] ?></li>
-              <li class="list-group-item">Shop: <?= $row["shopsName"] ?></li>
-              <li class="list-group-item">Plattform: <?= $row["platform"] ?></li>
-        </ul>
-      </li>
-       
+			<figcaption><?= $row["gamename"] ?></figcaption>
+
+		</figure>
+
 <?php
     }
  } else {
     echo "0 results";
  }
 ?>
-  
+	</div>
 
+	<h2><strong>What's new?</strong></h2>
+
+	<div class="news">
+
+		<figure class="article">
+
+			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news1.jpg" />
+
+			<figcaption>
+
+				<h3>New Item</h3>
+
+				<p>
+
+					In today’s update, two heads are better than one, and three heads are better than that, as the all-new Flockheart’s Gamble Arcana item for Ogre Magi makes its grand debut.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+		<figure class="article">
+
+			<img src="https://mrreiha.keybase.pub/codepen/hover-fx/news2.png" />
+
+			<figcaption>
+
+				<h3>Update</h3>
+
+				<p>
+
+					Just in time for Lunar New Year and the Rat’s time in the cyclical place of honor, the Treasure of Unbound Majesty is now available.
+
+				</p>
+
+			</figcaption>
+
+		</figure>
+
+	</div>
 
 </div>
 
+
     <button class="topBtn" onclick="topFunction()" id="topBtn">
-      <i class="fas fa-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
-    
-    <footer class="footer">
-
-    </footer>
-  <script src="script.js"></script>
+        
+    <footer class="footer"></footer>
+    <script src="script.js"></script>
   
-  </body>
-
+</body>
+ 
 </html>
 
 
 <?php 
     $db -> close();
 ?>
-
-
