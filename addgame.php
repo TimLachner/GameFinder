@@ -24,7 +24,6 @@ require "./core/db.php";
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script
       src="https://kit.fontawesome.com/bb308353d9.js"
       crossorigin="anonymous">
@@ -36,10 +35,10 @@ require "./core/db.php";
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="./index.php">GF</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
@@ -105,14 +104,11 @@ require "./core/db.php";
                 
                         </div>
             <div class="col-6">
-                <form method="POST" action="./checklogin.php">
+                <form method="POST" action="./savegame.php">
                     <div class="adgame">
                         
                         <div class="addgametext">Datenbank eintrag:</div>
-                        
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="ID:" name="id" aria-label="id">
-                        </div>
+                    
                         
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Name:" name="name" aria-label="name">
@@ -138,9 +134,8 @@ require "./core/db.php";
                             <input type="text" class="form-control" placeholder="ImgLink:" name="imglink" aria-label="ImgLink">
                         </div>
 
-
                         <div>
-                        <button type="submit" value="Speichern" class="btn btn-outline-primary">Speichern</button>
+                        <input type="submit" value="Speichern" class="btn btn-outline-primary" value="Speichern"/>
                         </div>
 
                        
@@ -149,6 +144,8 @@ require "./core/db.php";
                 </form>
 
             </div>
+
+
             <div class="col">
 
             </div>
@@ -157,23 +154,3 @@ require "./core/db.php";
 </body>
  
 </html>
-
-<?php
-
-$id = $_POST["id"];
-$name = $_POST["name"];
-$publisher = $_POST["publisher"];
-$release = $_POST["release"];
-$shop = $_POST["shop"];
-$platform = $_POST["plattform"];
-$imglink = $_POST["imglink"];
-
-
-
-$sql = "INSERT INTO game (id, name, release, idshop, platform, idpubliser, imglink) VALUES ('$id', '$name', '$publisher', '$release', '$shop', '$platform', '$imglink')";
-
-$result = mysqli_query($db, $sql);
-
-$num_rows = mysqli_num_rows($result);
-
-?>
