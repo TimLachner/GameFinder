@@ -59,11 +59,11 @@
                         <div class="adminlogintext">Bitte Logge dich ein:</div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Benutzername:" name="username" aria-label="Username">
+                            <input type="text" maxlength="25" class="form-control" placeholder="Benutzername:" name="username" aria-label="Username">
                         </div>
             
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Passwort:" name="password" aria-label="Passwort">
+                            <input type="password" maxlength="25" class="form-control" placeholder="Passwort:" name="password" aria-label="Passwort">
                         </div>
 
                         <div>

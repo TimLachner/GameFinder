@@ -265,56 +265,9 @@ h2:after {
     background-color: black;
 }
 
-
-/*INFO
-
-.name {
-    display: block;
-    position: relative;
-    list-style: none;
-    text-align: left;
-    color: black;
-    text-align: center;
+.btn-outline-primary {
+    margin: auto;
 }
-
-.publisher {
-    display: block;
-    position: relative;
-    list-style: none;
-    text-align: left;
-    color: black;
-    text-align: center;
-}
-
-.release {
-    display: block;
-    position: relative;
-    list-style: none;
-    text-align: left;
-    color: black;
-    text-align: center;
-}
-
-.shop {
-    display: block;
-    position: relative;
-    list-style: none;
-    text-align: left;
-    color: black;
-    text-align: center;
-}
-
-.plattform {
-    display: block;
-    position: relative;
-    list-style: none;
-    text-align: left;
-    color: black;
-    text-align: center;
-}*/
-
-
-/*----------------*/
 
 .fbtn {
     position: relative;
@@ -328,49 +281,30 @@ h2:after {
 }
 
 
-/*PAGES*/
-
-
 /*ADMIN-LOGIN*/
+
+.adminlogintext {
+    margin-bottom: 20px;
+    color: white;
+}
 
 
 /*ADD-GAME*/
-
-
-/*NAVBAR*/
-
-
-/**/
-
-
-/**/
-
-
-/**/
-
-
-/**/
-
-
-/**/
-
-.btn-outline-primary {
-    margin: auto;
-}
-
-.navbar {
-    margin: 0 0 50px 0;
-}
 
 .addgametext {
     margin-bottom: 20px;
     color: white;
 }
 
-.adminlogintext {
-    margin-bottom: 20px;
-    color: white;
+
+/*NAVBAR*/
+
+.navbar {
+    margin: 0 0 50px 0;
 }
+
+
+/*TABELE*/
 
 .tabellüberschrift {
     text-align: left;

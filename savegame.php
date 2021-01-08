@@ -11,13 +11,15 @@ $imglink = $_POST["imglink"];
 print_r($_POST);
 print_r($db);
 
-$sql = "INSERT INTO game (gamename, release, idpublisher, idshop, platform, imglink) VALUES ('$name','$release', '$publisher', '$shop', '$platform', '$imglink')";
+$sql = "INSERT INTO game (gamename, idpublisher, idshop, platform, imglink) VALUES ('$name', '$publisher', '$shop', '$platform', '$imglink')";
 
 if (mysqli_query($db, $sql)) {
     echo "New record created successfully";
  } else {
     echo "Error: " . $sql . "" . mysqli_error($db);
  }
+redirect("./addgame.php");
+
  $db->close();
 
 ?>
