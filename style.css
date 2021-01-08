@@ -3,7 +3,7 @@ body {
   background-color: white;
   color: black;
   margin: 0;
-  font-family: rubik;
+  font-family: "Raleway", sans-serif;
 }
 
 .header {
@@ -23,47 +23,8 @@ h1 {
   position: relative;
   display: block;
   color: black;
-  font-family: rubik;
+  font-family: "Raleway", sans-serif;
   display: flex;
-}
-
-.suche {
-  position: absolute;
-  top: 70px;
-  height: 1000px;
-  left: 1700px;
-  transform: translate(-50%, -50%);
-  background: black;
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-  color: white;
-}
-
-.such-btn {
-  position: absolute;
-  right: 5px;
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.sucht {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 240px;
 }
 
 /*TOPBUTTON*/
@@ -110,7 +71,7 @@ h1 {
 }
 
 .card {
-  font-family: rubik;
+  font-family: "Raleway", sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0, 3s;
   border-radius: 5px;
@@ -191,51 +152,28 @@ h1 {
   outline: none;
 }
 
-/*DROPDOWN*/
-
-.filter {
-  position: relative;
-  display: inline-block;
-}
-
-.filter-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.filter-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.filter-content a:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
-}
-
-/*LOGIN-PAGE*/
-
-.loginbutton {
-  color: purple;
-}
-
-.textbox {
-  background: red;
-}
+/*PAGES*/
 
 .btn-outline-primary {
   margin: auto;
 }
 
 .navbar {
-  margin: 0 0 20px 0;
+  margin: 0 0 50px 0;
+}
+
+.addgametext {
+  margin-bottom: 20px;
+}
+
+.adminlogintext {
+  margin-bottom: 20px;
+}
+
+.tabellüberschrift {
+  text-align: left;
+}
+
+.tabellentext {
+  margin-bottom: 20px;
 }

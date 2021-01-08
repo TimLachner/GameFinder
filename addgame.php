@@ -1,5 +1,5 @@
 <?php
-require "./config.php";
+require "./core/db.php";
 
 ?>
 
@@ -20,9 +20,9 @@ require "./config.php";
       type="image/x-icon"
       href="./assets/img/icon.ico"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
-      rel="stylesheet"/>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script
@@ -33,73 +33,114 @@ require "./config.php";
   </head>
  
 <body> 
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="./index.php">GF</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="./adminlogin.php">Login</a>
+                                    </li>   
+                                </ul>
+                                    <form class="d-flex">
+                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-outline-success" type="submit">Search</button>
+                                    </form>
+                        </div>
+                    </div>
+                </nav>
+
     <div class="container">
         <div class="row">
             <div class="col">
-    
-            </div>
+                <div class="row">
+
+                        <div class="tabelletext">ID-Übersicht Shops:</div>
+
+
+                            <ul class="list-group">
+                                <li class="list-group-item">1: Steam</li>
+                                <li class="list-group-item">2. EpicGames</li>
+                                <li class="list-group-item">3. Rockstar Games</li>
+                                <li class="list-group-item">4. Uplay</li>
+                                <li class="list-group-item">5. Laden</li>
+                                <li class="list-group-item">6. Microsoft Store</li>
+                                <li class="list-group-item">7. Eigener Shop</li>
+                            </ul>
+                        </div>
+                        
+
+                        <div class="tabelletext">ID-Übersicht Publisher:</div>
+
+                            <ul class="list-group">
+                                <li class="list-group-item">1: Rockstar Games</li>
+                                <li class="list-group-item">2. FromSoftware</li>
+                                <li class="list-group-item">3. Nintendo</li>
+                                <li class="list-group-item">4. Electronic Arts</li>
+                                <li class="list-group-item">5. Raven Software</li>
+                                <li class="list-group-item">6. Behaviour Interactive</li>
+                                <li class="list-group-item">7. Playground Games</li>
+                                <li class="list-group-item">8. Bohemia Interactive</li>
+                                <li class="list-group-item">9. Ubisoft</li>
+                                <li class="list-group-item">10. Endnight Games</li>
+                                <li class="list-group-item">11. Cyanide</li>
+                                <li class="list-group-item">12. Red Barrels</li>
+                                <li class="list-group-item">13. Movie Games</li>
+                                <li class="list-group-item">14. Hello Games</li>
+                                <li class="list-group-item">15. Coffee Stain Studios</li>
+                                <li class="list-group-item">16. Frontier Developments</li>
+                                <li class="list-group-item">17. Cyber Light</li>
+                                <li class="list-group-item">18. Gamepires</li>
+                                <li class="list-group-item">19. Mojang</li>
+
+                            </ul>
+                        
+
+                
+                        </div>
             <div class="col-6">
                 <form method="POST" action="./checklogin.php">
                     <div class="adgame">
                         
-
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="./index.php">GF</a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="./adminlogin.php">Login</a>
-                                        </li>   
-                                    </ul>
-                                        <form class="d-flex">
-                                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                            <button class="btn btn-outline-success" type="submit">Search</button>
-                                        
-                                        
-                                        
-                                        
-                </form>
-                
-            
-            
-            
-            
-            </div>
+                        <div class="addgametext">Datenbank eintrag:</div>
+                        
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="ID:" name="id" aria-label="id">
                         </div>
-                    </nav>
-
-                    
-                    
-                    <div class="input-group mb-3">
+                        
+                        <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Name:" name="name" aria-label="name">
                         </div>
             
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Publisher:" name="publisher" aria-label="publisher">
+                            <input type="text" class="form-control" placeholder="Publisher-ID:" name="publisher" aria-label="publisher">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Release:" name="release" aria-label="release">
+                            <input type="date" class="form-control" placeholder="Release:" name="release" aria-label="release">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Shop:" name="shop" aria-label="shop">
+                            <input type="text" class="form-control" placeholder="Shop-ID:" name="shop" aria-label="shop">
                         </div>
 
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Plattform:" name="plattform" aria-label="plattform">
                         </div>
 
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="ImgLink:" name="imglink" aria-label="ImgLink">
+                        </div>
+
 
                         <div>
-                        <button type="" value="Speichern" class="btn btn-outline-primary">Speichern</button>
+                        <button type="submit" value="Speichern" class="btn btn-outline-primary">Speichern</button>
                         </div>
 
                        
@@ -109,10 +150,30 @@ require "./config.php";
 
             </div>
             <div class="col">
-            
+
             </div>
         </div>
     </div>
 </body>
  
 </html>
+
+<?php
+
+$id = $_POST["id"];
+$name = $_POST["name"];
+$publisher = $_POST["publisher"];
+$release = $_POST["release"];
+$shop = $_POST["shop"];
+$platform = $_POST["plattform"];
+$imglink = $_POST["imglink"];
+
+
+
+$sql = "INSERT INTO game (id, name, release, idshop, platform, idpubliser, imglink) VALUES ('$id', '$name', '$publisher', '$release', '$shop', '$platform', '$imglink')";
+
+$result = mysqli_query($db, $sql);
+
+$num_rows = mysqli_num_rows($result);
+
+?>
